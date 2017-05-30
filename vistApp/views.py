@@ -34,6 +34,4 @@ def inPolygon(request):
 
             response = {u'inPolygon': inPolygon}
             return JsonResponse(response)
-        else:
-            return HttpResponse(u'Запрос должен использовать метод POST')
 
