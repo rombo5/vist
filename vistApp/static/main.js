@@ -1,7 +1,5 @@
  window.onload = function() {
-        /**
-        * Координаты нашего полигона
-        */
+
         var polygon = [
             [200, 50],
         [415, 100],
@@ -20,9 +18,7 @@
         //     [10, 10],
 
         ];
-     /**
-        * Функция вывода нашего полигона на холсте с использованием массива координат
-        */
+
         var drawPolygon = function(id, coords) {
             var canvas = document.getElementById(id);
 
@@ -47,15 +43,13 @@
 
 
 
-        /**
-        * Обрабатываем нажатия мышкой на холст
-        */
+
         click = function(event) {
             // Фиксируем координаты клика
             var x = event.offsetX;
             var y = event.offsetY;
 
-            // Готовим запрос к серверу. Запрос содержит координаты полигона и точки куда был произведен клик
+
             var query = {
                 "polygon": polygon,
                 "point": [x, y]
@@ -81,9 +75,7 @@
               request.send(JSON.stringify(query));
         };
 
-        /**
-        * Рисуем полигон сразу после загрузки страницы
-        */
+       
         drawPolygon("canvasMain", polygon);
 
       // polygon = null;
